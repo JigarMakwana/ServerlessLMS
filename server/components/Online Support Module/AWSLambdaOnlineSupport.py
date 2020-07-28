@@ -5,8 +5,8 @@ DB_HOST = 'serverless-project.ckwpe1lbmfqz.us-east-1.rds.amazonaws.com'
 DB_USER = 'root'
 DB_PASS = 'rootuser'
 DB_NAME = 'DALServerlessLMS'
-SELECT_ONLINE_USERS_QUERY = "SELECT username FROM User WHERE username != %s"
-SELECT_USERS_COUNT_QUERY = "SELECT COUNT(username) FROM User"
+SELECT_ONLINE_USERS_QUERY = "SELECT username FROM Users WHERE username != %s and userState = 1"
+SELECT_USERS_COUNT_QUERY = "SELECT COUNT(username) FROM Users"
 
 def get_database_connection():
     try:
