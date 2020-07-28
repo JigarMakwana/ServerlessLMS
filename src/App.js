@@ -11,6 +11,7 @@ import CourseStartPage from "./components/CourseStartPage";
 import SetProfilePage from "./components/SetProfilePage";
 import DataProcessing from "./components/Data Processing Module/DataProcessing";
 import Chat from "./components/Chat Module/Chat";
+import MLUpload from "./components/ML Module/MLUpload";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/set-profile" component={SetProfilePage} />
           <Route path="/dataprocessing" component={DataProcessing} />
           <Route path="/chat" component={Chat} />
+          <Route path="/ml" component={MLUpload} />
         </Switch>
       </Router>
     </div>

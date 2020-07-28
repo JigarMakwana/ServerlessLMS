@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import logo from '../images/logo192.png'
 import { Link } from 'react-router-dom'
 import Navbar from "react-bootstrap/Navbar";
@@ -26,10 +26,15 @@ const NavigationBar = () => (
                     <ul className="navbar-nav mr-auto">
                         <Nav.Link className="header-info" href="/">Home</Nav.Link>
                         <NavDropdown title="Our Services" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Online Support</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Chat</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Data Processing</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.4">Machine Learning</NavDropdown.Item>
+                            <Link to="/chat">
+                                <NavDropdown.Item href="#action/3.2">Chat</NavDropdown.Item>
+                            </Link>
+                            <Link to="/dataprocessing">
+                                <NavDropdown.Item href="#action/3.3">Data Processing</NavDropdown.Item>
+                            </Link>
+                            <Link to="/ml">
+                                <NavDropdown.Item href="#action/3.4">Machine Learning</NavDropdown.Item>
+                            </Link>
                         </NavDropdown>
                     </ul>
                     <div className="col-md-3">
