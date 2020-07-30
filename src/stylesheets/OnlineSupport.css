@@ -99,7 +99,7 @@ body {
 }
 
 /* Set a style for the submit/send button */
-.form-container .btn {
+.form-container .btn-change {
     background-color: #4CAF50;
     color: white;
     padding: 16px 20px;
@@ -110,7 +110,7 @@ body {
     opacity: 0.8;
 }
 
-.btn {
+.btn-change {
     background-color: #4CAF50;
     color: white;
     padding: 16px 20px;

@@ -10,6 +10,7 @@ import StudentDashboard from "./components/StudentDashboard";
 import CourseStartPage from "./components/CourseStartPage";
 import SetProfilePage from "./components/SetProfilePage";
 import DataProcessing from "./components/Data Processing Module/DataProcessing";
+import Chat from "./components/Chat Module/Chat";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/course-page" component={CourseStartPage} />
           <Route path="/set-profile" component={SetProfilePage} />
           <Route path="/dataprocessing" component={DataProcessing} />
+          <Route path="/chat" component={Chat} />
         </Switch>
       </Router>
     </div>

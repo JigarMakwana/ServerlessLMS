@@ -127,7 +127,7 @@ class DataProcessing extends Component {
     const SuccessMessage = () => (
       <div style={{ padding: 50 }}>
         <h3 style={{ color: "green" }}>File Uploaded successfully!</h3>
-        <button type="submit" onClick={this.btnClick} class="btn btn-primary">
+        <button type="submit" onClick={this.btnClick} class="btn btn-primary btn-change">
           Display Word Cloud
         </button>
       </div>
