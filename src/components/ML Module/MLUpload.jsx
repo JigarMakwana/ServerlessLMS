@@ -85,4 +85,45 @@ export default MLUpload
     ]
 }
 
+from google.cloud import storage
+import json
+import cloudstorage as gcs
+storage_client = storage.Client()
+
+def writeFile(trainBucket, fileName, new_json_data):
+    jsonfileData = readFileToTempStorage(trainBucket, fileName)
+    return jsonfileData
+    if jsonfileData == '':
+        with open('/tmp/' + fileName, 'w') as json_file:
+            json.dump(new_json_data, json_file)
+        return True
+    else:
+        for i in jsonfileData["message"]:
+            new_json_data["message"].append(i)
+        with open('/tmp/' + fileName, 'w') as json_file:
+            json.dump(new_json_data, json_file)
+        return True
+
+def readFileToTempStorage(bucketName, fileName):
+    try:
+        bucket = storage_client.bucket(bucketName)
+        blob = bucket.blob(fileName)
+        blob.download_to_filename('/tmp/' + fileName)
+        with open('/tmp/' + fileName) as json_file:
+            data = json.load(json_file)
+            return data
+    except:
+        print('no such file')
+        return ''
+
+def hello_world(request):
+    print(request)
+    request_json = json.dumps(request.get_json())
+    print(request_json)
+    return writeFile('chat-module-messages', 'chat-module-history.json', request_json)
+    
+    bucket = storage_client.bucket('chat-module-messages')
+    blob = bucket.blob('chat-module-history.json')
+    blob.upload_from_filename('/tmp/' + 'chat-module-history.json')
+
  */
