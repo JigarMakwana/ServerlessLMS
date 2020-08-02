@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "../.././stylesheets/DataProcessing.css";
 import ReactWordcloud from "react-wordcloud";
+import NavBarLoggedIn from ".././NavBarLoggedIn";
 
 class DataProcessing extends Component {
   constructor(props) {
@@ -147,25 +148,28 @@ class DataProcessing extends Component {
     );
 
     return (
-      <div className="DataProcessing">
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <h1>Upload a File for processing</h1>
-        <input
-          onChange={this.handleChange}
-          ref={(ref) => {
-            this.uploadInput = ref;
-          }}
-          type="file"
-        />
-        <br />
-        <button onClick={this.handleUpload}>UPLOAD</button>
-        {this.state.success ? <SuccessMessage /> : null}
-        {this.state.error ? <ErrorMessage /> : null}
-        {this.state.display ? <WordCloud /> : null}
+      <div>
+        <NavBarLoggedIn />
+        <div className="DataProcessing">
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <h1>Upload a File for processing</h1>
+          <input
+            onChange={this.handleChange}
+            ref={(ref) => {
+              this.uploadInput = ref;
+            }}
+            type="file"
+          />
+          <br />
+          <button onClick={this.handleUpload}>UPLOAD</button>
+          {this.state.success ? <SuccessMessage /> : null}
+          {this.state.error ? <ErrorMessage /> : null}
+          {this.state.display ? <WordCloud /> : null}
+        </div>
       </div>
     );
   }

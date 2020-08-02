@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import $ from 'jquery'
+import NavBarLoggedIn from ".././NavBarLoggedIn";
+
 
 export class MLUpload extends Component {
 
@@ -38,25 +40,28 @@ export class MLUpload extends Component {
 
     render() {
         return (
-            <div className="container p-5">
-                <form style={{ marginTop: "200px" }}>
-                    <div className="custom-file" style={{ width: "60%" }}>
-                        <input type="file" className="custom-file-input" id="customFile" />
-                        <label className="custom-file-label" htmlFor="customFile">Choose File</label>
+            <div>
+                <NavBarLoggedIn />
+                <div className="container p-5">
+                    <form style={{ marginTop: "200px" }}>
+                        <div className="custom-file" style={{ width: "60%" }}>
+                            <input type="file" className="custom-file-input" id="customFile" />
+                            <label className="custom-file-label" htmlFor="customFile">Choose File</label>
+                        </div>
+                    </form>
+                    <div className="container mt-5">
+                        <button className="btn btn-outline-success" style={{ width: "20%" }} onClick={this.submitHandler}>Submit</button>
                     </div>
-                </form>
-                <div className="container mt-5">
-                    <button className="btn btn-outline-success" style={{ width: "20%" }} onClick={this.submitHandler}>Submit</button>
-                </div>
-                <div className="container mt-5" style={{ display: "none" }} id="loader">
-                    <div className="spinner-grow" role="status">
-                        <span className="sr-only">Loading...</span>
+                    <div className="container mt-5" style={{ display: "none" }} id="loader">
+                        <div className="spinner-grow" role="status">
+                            <span className="sr-only">Loading...</span>
+                        </div>
                     </div>
-                </div>
-                <div className="container mt-5" style={{ display: "none" }} id="successText">
-                    <p className="lead">Analysis Completed!</p>
-                </div>
+                    <div className="container mt-5" style={{ display: "none" }} id="successText">
+                        <p className="lead">Analysis Completed!</p>
+                    </div>
 
+                </div>
             </div>
         )
     }
@@ -121,7 +126,7 @@ def hello_world(request):
     request_json = json.dumps(request.get_json())
     print(request_json)
     return writeFile('chat-module-messages', 'chat-module-history.json', request_json)
-    
+
     bucket = storage_client.bucket('chat-module-messages')
     blob = bucket.blob('chat-module-history.json')
     blob.upload_from_filename('/tmp/' + 'chat-module-history.json')
