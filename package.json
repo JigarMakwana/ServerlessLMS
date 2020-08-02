@@ -8,18 +8,21 @@
     "@testing-library/user-event": "^7.2.1",
     "aws-sdk": "^2.721.0",
     "axios": "^0.19.2",
+    "babel-preset-react": "^6.24.1",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.5.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jquery": "^3.5.1",
+    "js-cookie": "^2.2.1",
     "popper.js": "^1.16.1",
     "react": "^16.13.1",
     "react-ace": "^9.0.0",
     "react-bootstrap": "^1.1.0",
     "react-chat-elements": "^10.9.3",
     "react-dom": "^16.13.1",
+    "react-icons": "^3.10.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-wordcloud": "^1.2.6",
@@ -45,5 +48,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "type": "module"
 }
