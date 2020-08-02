@@ -26,7 +26,7 @@ function App() {
           <Route path="/course-page" component={CourseStartPage} />
           <Route path="/set-profile" component={SetProfilePage} />
           <Route path="/dataprocessing" component={DataProcessing} />
-          <Route path="/chat" component={Chat} />
+          <Route path="/chat/:name" component={Chat} />
           <Route path="/ml" component={MLUpload} />
         </Switch>
       </Router>

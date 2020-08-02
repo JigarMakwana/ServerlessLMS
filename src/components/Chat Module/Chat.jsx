@@ -31,7 +31,7 @@ export class Chat extends Component {
       receivedMsgTime: "",
       receivedMsgSender: "",
       msgListComponentData: [],
-      userName: "",
+      userName: this.props.match.params.name,
       isNameEntered: false,
       onlineUsers: [],
       subscriber: '',

@@ -82,8 +82,8 @@ class NavBarLoggedIn extends Component {
                             <ul className="navbar-nav mr-auto">
                                 <Nav.Link className="header-info" href="/">Home</Nav.Link>
                                 <NavDropdown title="Our Services" id="basic-nav-dropdown">
-                                    <Link to="/chat" style={{ textDecoration: "none" }}>
-                                        <NavDropdown.Item href="/chat">Chat</NavDropdown.Item>
+                                    <Link to={`/chat/${this.state.username}`} style={{ textDecoration: "none" }}>
+                                        <NavDropdown.Item href={`/chat/${this.state.username}`}>Chat</NavDropdown.Item>
                                     </Link>
                                     <Link to="/dataprocessing" style={{ textDecoration: "none" }}>
                                         <NavDropdown.Item href="/dataprocessing">Data Processing</NavDropdown.Item>
