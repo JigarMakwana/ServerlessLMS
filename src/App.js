@@ -11,12 +11,13 @@ import CourseStartPage from "./components/CourseStartPage";
 import SetProfilePage from "./components/SetProfilePage";
 import DataProcessing from "./components/Data Processing Module/DataProcessing";
 import Chat from "./components/Chat Module/Chat";
+import MLUpload from "./components/ML Module/MLUpload";
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <NavigationBar />
+        {/*<NavigationBar />*/}
         <Switch>
           <Route path="/" exact component={LandingPage} />
           <Route path="/signup" component={SignupPage} />
@@ -25,7 +26,8 @@ function App() {
           <Route path="/course-page" component={CourseStartPage} />
           <Route path="/set-profile" component={SetProfilePage} />
           <Route path="/dataprocessing" component={DataProcessing} />
-          <Route path="/chat" component={Chat} />
+          <Route path="/chat/:name" component={Chat} />
+          <Route path="/ml" component={MLUpload} />
         </Switch>
       </Router>
     </div>

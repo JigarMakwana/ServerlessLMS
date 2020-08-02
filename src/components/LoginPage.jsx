@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 import Login from './Login'
+import NavigationBar from "./NavigationBar";
 
 export class LoginPage extends Component {
     render() {
         return (
-            <div className="container justfify-content-center">
-                <Login />
+            <div>
+                <NavigationBar />
+                <div className="container justfify-content-center">
+                    <Login />
+                </div>
             </div>
         )
     }

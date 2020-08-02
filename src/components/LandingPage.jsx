@@ -10,6 +10,7 @@ import github_icon from "../images/github-icon.png";
 function LandingPage() {
     return (
         <div className="m-0">
+            <NavigationBar />
             <div className="row justify-content-around">
                 <div className="col-md-4 col-sm-12">
                     <img src={stacklearner} width="500px" className="img-fluid" style={{ position: "relative", top: "4rem" }}></img>
