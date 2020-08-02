@@ -1,3 +1,4 @@
+// Author - Jigar Makwana B00842568
 const admin = require('firebase-admin');
 admin.initializeApp();
 const db = admin.firestore();

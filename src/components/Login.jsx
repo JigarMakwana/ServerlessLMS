@@ -1,3 +1,4 @@
+// Author - Jigar Makwana B00842568
 import React, { Component } from 'react'
 import google_icon from '.././images/google-icon.png'
 import fb_icon from '.././images/facebook-icon.png'

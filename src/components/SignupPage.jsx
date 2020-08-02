@@ -1,3 +1,4 @@
+// Author - Jigar Makwana B00842568
 import React, { Component } from 'react'
 import signupimage from ".././images/signup_image.png"
 import Signup from './Signup'
