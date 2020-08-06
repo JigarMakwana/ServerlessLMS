@@ -1,9 +1,8 @@
+# /*@Author - Jigar Makwana B00842568*/
 import boto3
-import botocore.exceptions
 import hmac
 import hashlib
 import base64
-import json
 import pymysql
 
 USER_POOL_ID = 'us-east-1_le8dNA92z'
@@ -23,11 +22,16 @@ def connectDatabase():
         print(error)
     return connection
 
+def hashPassword(unhashedPsswd):
+    # SHA256 encryption used for generating the hash
+    return hashlib.sha256(unhashedPsswd.encode('utf-8')).hexdigest()
+
 def addUserToRDS(name, email, password, instituteName):
     db = connectDatabase()
     cursor = db.cursor()
     userState = str(0)
-    values = (name, email, password, instituteName, userState)
+    hashedPsswd = hashPassword(password)
+    values = (name, email, hashedPsswd, instituteName, userState)
     cursor.execute(INSERT_USER_QUERY, values)
     db.commit()
     print("Data added to RDS!")

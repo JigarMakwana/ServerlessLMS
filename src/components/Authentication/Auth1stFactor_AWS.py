@@ -1,5 +1,5 @@
+# Author - Jigar Makwana B00842568
 import boto3
-import botocore.exceptions
 import hmac
 import hashlib
 import base64
