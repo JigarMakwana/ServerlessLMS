@@ -1,5 +1,7 @@
-// Author - Jigar Makwana B00842568
-import React, {Component} from 'react';
+
+/* @Author - Jigar Makwana B00842568 */
+
+import React, { Component } from 'react';
 import logo from '../images/logo192.png'
 import { Link } from 'react-router-dom'
 import Navbar from "react-bootstrap/Navbar";
@@ -45,8 +47,8 @@ class NavBarLoggedIn extends Component {
                         throw new Error("Update unsuccessful.");
                     }
                 }).catch(err => {
-                console.log(err);
-            })
+                    console.log(err);
+                })
             Cookies.remove("email");
             Cookies.remove("username");
             this.setState({ isLoggedin: false, isLogoutClicked: true });
@@ -81,10 +83,15 @@ class NavBarLoggedIn extends Component {
                             <ul className="navbar-nav mr-auto">
                                 <Nav.Link className="header-info" href="/">Home</Nav.Link>
                                 <NavDropdown title="Our Services" id="basic-nav-dropdown">
-                                    <NavDropdown.Item href="#action/3.1">Online Support</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.2">Chat</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.3">Data Processing</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.4">Machine Learning</NavDropdown.Item>
+                                    <Link to={`/chat/${this.state.username}`} style={{ textDecoration: "none" }}>
+                                        <NavDropdown.Item href={`/chat/${this.state.username}`}>Chat</NavDropdown.Item>
+                                    </Link>
+                                    <Link to="/dataprocessing" style={{ textDecoration: "none" }}>
+                                        <NavDropdown.Item href="/dataprocessing">Data Processing</NavDropdown.Item>
+                                    </Link>
+                                    <Link to="/ml" style={{ textDecoration: "none" }}>
+                                        <NavDropdown.Item href="/ml">Machine Learning</NavDropdown.Item>
+                                    </Link>
                                 </NavDropdown>
                             </ul>
                             <div className="col-md-3">
@@ -93,18 +100,18 @@ class NavBarLoggedIn extends Component {
                                         <img
                                             alt=""
                                             src={user}
-                                            width="40"
-                                            height="40"
+                                            width="30"
+                                            height="30"
                                             className="d-inline-block align-top"
                                         />
                                         <a style={{ color: "white", fontSize: "20px" }} >
                                             {this.state.username}
                                         </a>
                                     </li>
-                                    &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                     <li className="nav-item">
                                         {/*<Link to="/signup">*/}
-                                            <button className="btn btn-primary" onClick={this.onButtonClick} >Log Out</button>
+                                        <button className="btn btn-primary" onClick={this.onButtonClick} >Log Out</button>
                                         {/*</Link>*/}
                                     </li>
                                 </ul>
